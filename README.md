@@ -5,11 +5,13 @@
 
 # private and public keys (1/2)
 
-- O limbus_main.js gera outros dois arquivos, a criptografia de chave pública usa um par de chaves relacionadas matematicamente (private_key.js public_key.js). Uma mensagem criptografada com a primeira chave deve ser decriptografada com a segunda chave e uma mensagem criptografada com a segunda chave deve ser decriptografada com a primeira chave.
+- O limbus_main.js admnistra os processos e o key_creator.js gera outros dois arquivos, a criptografia de chave pública usa um par de chaves relacionadas matematicamente (private_key.pgp, public_key.pgp). Uma mensagem criptografada com a primeira chave deve ser decriptografada com a segunda chave e uma mensagem criptografada com a segunda chave deve ser decriptografada com a primeira chave.
 Cada participante em um sistema de chave pública possui um par de chaves. Uma chave é nomeada como a chave privada e é mantida secreta. A outra chave é distribuída para quem deseja recebê-la; essa chave é a chave pública.
 Qualquer um pode criptografar uma mensagem usando sua chave pública, mas somente você pode lê-la. Ao receber a mensagem, decriptografe-a usando sua chave privada.
 
-- O método de uso é openPGP.
+- O método usado é openPGP.
+
+- A cada 50 minutos uma nova chave é criada pelo key_creator.js e substituida automaticamente. Vai de sua escolha deletar as antigas chaves ou não, caso tenha alguma mensagem não decriptada.
 
 
 # Advanced Encryption Standard, AES128 (2/2)
@@ -24,7 +26,9 @@ Qualquer um pode criptografar uma mensagem usando sua chave pública, mas soment
 
 # Uso de dados.
 
-- Cada computador realizará micro compartilhamentos de dados, ou seja, pelo processo de fracionar sua data em packages é reduzido significamente a carga das redes individuais. Mesmo que um nó tenha a chave privada para a decriptação o mesmo seria imposssivel pois está faltando partes.
+- Cada computador realizará micro compartilhamentos de dados, ou seja, pelo processo de fracionar sua data em packages é reduzido significamente a carga das redes individuais. Mesmo que um nó intercepte e tenha a chave privada para a decriptação, o mesmo seria imposssivel pois está faltando partes.
+ 
+- Após a mensagem ser montada e decriptada por sua chave privada, ao decorrer de 20 minutos a deleção acontece, incapaz de ser recuperada por métodos forenses.
 
 <img src="https://github.com/obrientatsuya/Limbus-Network-LN128-/blob/main/limbusnetworkrouting.png?raw=true"/>
 
