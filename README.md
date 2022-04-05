@@ -32,7 +32,7 @@ Qualquer um pode criptografar uma mensagem usando sua chave pública, mas soment
 
 <img src="https://github.com/obrientatsuya/Limbus-Network-LN128-/blob/main/limbusnetworkrouting.png?raw=true"/>
 
-- EX: receberás a fração de um dado criptografado(1kb) que após continuar o fluxo randomico, será deletado.
+- EX: receberás a fração de um dado criptografado(1mb) que após continuar o fluxo randomico, será deletado.
 
 # Smart Contract 
 O que é Smart Contract? É uma condição imposta que, uma vez alcançada, executa automaticamente uma determinada função. Será usado para garantir a segurança e compartilhamento dos dados, evitando problema de alterações e perca de pacotes na etapa de Routing. 6 Grandes condições, 1 - Definição de Target, 2 - Limite de tamanho, 3 - Permitido apenas AES128, 4 - Decisão randomica e fração de pacotes, 5 - Ordem para montar, 6 - Contrato confirmado entre dois nós. Só depois de tudo isso é possivel enviar os pacotes.
